@@ -1,0 +1,7 @@
+baseURL: https://hcplantern.top/
+languageCode: zh-CN
+title: hcplantern's blog
+theme: PaperMod
+params:
+  contact:
+    email: hcplantern@outlook.com

@@ -1,0 +1,5 @@
+baseURL = 'https://hcplantern.top/'
+languageCode = 'en-us'
+title = 'hcplantern blog'
+theme = 'PaperMod'
+
