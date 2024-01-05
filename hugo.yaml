@@ -1,7 +1,722 @@
-baseURL: https://hcplantern.top/
+title: "hcplantern's blog"
+baseURL: https://hcplantern.top
+theme:
+  - FixIt
+defaultContentLanguage: zh-cn
 languageCode: zh-CN
-title: hcplantern's blog
-theme: PaperMod
+languageName: 简体中文
+hasCJKLanguage: false
+paginate: 12
+copyright: ""
+enableRobotsTXT: true
+enableGitInfo: false
+enableEmoji: true
+menu:
+  main:
+    - identifier: archives
+      parent: ""
+      pre: ""
+      post: ""
+      name: Archives
+      url: /archives/
+      title: ""
+      weight: 1
+      params:
+        class: ""
+        draft: false
+        icon: fa-solid fa-archive
+        type: ""
+    - identifier: categories
+      parent: ""
+      pre: ""
+      post: ""
+      name: Categories
+      url: /categories/
+      title: ""
+      weight: 2
+      params:
+        icon: fa-solid fa-folder-tree
+    - identifier: tags
+      parent: ""
+      pre: ""
+      post: ""
+      name: Tags
+      url: /tags/
+      title: ""
+      weight: 3
+      params:
+        icon: fa-solid fa-tags
+related:
+  includeNewer: false
+  threshold: 80
+  toLower: false
+  indices:
+    - applyFilter: false
+      cardinalityThreshold: 0
+      name: keywords
+      pattern: ""
+      toLower: false
+      type: basic
+      weight: 100
+    - applyFilter: false
+      cardinalityThreshold: 0
+      name: date
+      pattern: ""
+      toLower: false
+      type: basic
+      weight: 10
+    - applyFilter: false
+      cardinalityThreshold: 0
+      name: tags
+      pattern: ""
+      toLower: false
+      type: basic
+      weight: 80
+    - applyFilter: false
+      name: fragmentrefs
+      type: fragments
+      weight: 80
+module:
+  hugoVersion:
+    extended: true
+    min: 0.112.0
+markup:
+  highlight:
+    codeFences: true
+    lineNos: true
+    lineNumbersInTable: true
+    noClasses: false
+    guessSyntax: true
+  goldmark:
+    extensions:
+      definitionList: true
+      footnote: true
+      linkify: true
+      strikethrough: true
+      table: true
+      taskList: true
+      typographer: true
+    renderer:
+      unsafe: true
+  tableOfContents:
+    ordered: false
+    startLevel: 2
+    endLevel: 6
+sitemap:
+  changefreq: weekly
+  filename: sitemap.xml
+  priority: 0.5
+Permalinks:
+  posts: posts/:slugorfilename
+privacy:
+  twitter:
+    enableDNT: true
+  youtube:
+    privacyEnhanced: true
+mediaTypes:
+  text/markdown:
+    suffixes:
+      - md
+  text/plain:
+    suffixes:
+      - txt
+outputFormats:
+  MarkDown:
+    mediaType: text/markdown
+    isPlainText: true
+    isHTML: false
+  archives:
+    path: archives
+    baseName: index
+    mediaType: text/html
+    isPlainText: false
+    isHTML: true
+    permalinkable: true
+  offline:
+    path: offline
+    baseName: index
+    mediaType: text/html
+    isPlainText: false
+    isHTML: true
+    permalinkable: true
+  README:
+    baseName: readme
+    mediaType: text/markdown
+    isPlainText: true
+    isHTML: false
+  baidu_urls:
+    baseName: baidu_urls
+    mediaType: text/plain
+    isPlainText: true
+    isHTML: false
+outputs:
+  home:
+    - HTML
+    - RSS
+    - JSON
+    - archives
+    - offline
+  page:
+    - HTML
+    - MarkDown
+  section:
+    - HTML
+    - RSS
+  taxonomy:
+    - HTML
+  term:
+    - HTML
+    - RSS
+taxonomies:
+  category: categories
+  tag: tags
+  collection: collections
 params:
-  contact:
-    email: hcplantern@outlook.com
+  version: 0.2.X
+  description: "hcplantern's blog"
+  keywords: []
+  defaultTheme: auto
+  fingerprint: ""
+  dateFormat: 2006-01-02
+  images: []
+  enablePWA: true
+  externalIcon: false
+  navigationReverse: false
+  withSiteTitle: true
+  titleDelimiter: "-"
+  indexWithSubtitle: false
+  disableThemeInject: false
+  author:
+    name: "hcplantern"
+    email: "hcplantern@outlook.com"
+    link: ""
+    avatar: ""
+  gitInfo:
+    repo: ""
+    branch: main
+    dir: content
+    issueTpl: title=[BUG]%20{title}&body=|Field|Value|%0A|-|-|%0A|Title|{title}|%0A|URL|{URL}|%0A|Filename|{sourceURL}|
+  app:
+    title: FixIt
+    noFavicon: false
+    svgFavicon: ""
+    iconColor: "#5bbad5"
+    tileColor: "#da532c"
+    themeColor:
+      light: "#f8f8f8"
+      dark: "#252627"
+  search:
+    enable: false
+    type: fuse
+    contentLength: 4000
+    placeholder: ""
+    maxResultLength: 10
+    snippetLength: 30
+    highlightTag: em
+    absoluteURL: false
+    algolia:
+      index: ""
+      appID: ""
+      searchKey: ""
+    fuse:
+      isCaseSensitive: false
+      minMatchCharLength: 2
+      findAllMatches: false
+      location: 0
+      threshold: 0.3
+      distance: 100
+      ignoreLocation: false
+      useExtendedSearch: false
+      ignoreFieldNorm: false
+  header:
+    desktopMode: sticky
+    mobileMode: auto
+    title:
+      logo: ""
+      name: ""
+      pre: ""
+      post: ""
+      typeit: false
+    subtitle:
+      name: ""
+      typeit: false
+  breadcrumb:
+    enable: false
+    sticky: false
+    showHome: false
+  footer:
+    enable: true
+    custom: ""
+    copyright: true
+    author: true
+    since: ""
+    gov: ""
+    icp: ""
+    license: ""
+    powered:
+      enable: true
+      hugoLogo: true
+      themeLogo: true
+    siteTime:
+      enable: false
+      animate: true
+      icon: fa-solid fa-heartbeat
+      pre: ""
+      value: ""
+    order:
+      powered: 0
+      copyright: 0
+      statistics: 0
+      visitor: 0
+      beian: 0
+  archives:
+    paginate: 20
+    dateFormat: 01-02
+  section:
+    paginate: 20
+    dateFormat: 01-02
+    rss: 10
+    recentlyUpdated:
+      enable: false
+      rss: false
+      days: 30
+      maxCount: 10
+  list:
+    paginate: 20
+    dateFormat: 01-02
+    rss: 10
+  tagcloud:
+    enable: true
+    min: 14
+    max: 32
+    peakCount: 10
+    orderby: name
+  home:
+    rss: 10
+    profile:
+      enable: true
+      gravatarEmail: "hcplantern@foxmail.com"
+      avatarURL: ""
+      avatarMenu: ""
+      title: ""
+      subtitle: ""
+      typeit: true
+      social: true
+      disclaimer: ""
+    posts:
+      enable: true
+      paginate: 6
+  social:
+    GitHub: "https://github.com/hcplantern"
+    Linkedin: ""
+    Twitter: ""
+    Instagram: ""
+    Facebook: ""
+    Telegram: ""
+    Medium: ""
+    Gitlab: ""
+    Youtubelegacy: ""
+    Youtubecustom: ""
+    Youtubechannel: ""
+    Tumblr: ""
+    Quora: ""
+    Keybase: ""
+    Pinterest: ""
+    Reddit: ""
+    Codepen: ""
+    FreeCodeCamp: ""
+    Bitbucket: ""
+    Stackoverflow: ""
+    Weibo: ""
+    Odnoklassniki: ""
+    VK: ""
+    Flickr: ""
+    Xing: ""
+    Snapchat: ""
+    Soundcloud: ""
+    Spotify: ""
+    Bandcamp: ""
+    Paypal: ""
+    Fivehundredpx: ""
+    Mix: ""
+    Goodreads: ""
+    Lastfm: ""
+    Foursquare: ""
+    Hackernews: ""
+    Kickstarter: ""
+    Patreon: ""
+    Steam: "https://steamcommunity.com/profiles/76561198339854999/"
+    Twitch: ""
+    Strava: ""
+    Skype: ""
+    Whatsapp: ""
+    Zhihu: ""
+    Douban: 
+      - prefix: "https://www.douban.com/people/"
+      - id: "148561316"
+      - title: "豆瓣（弃用）"
+    Angellist: ""
+    Slidershare: ""
+    Jsfiddle: ""
+    Deviantart: ""
+    Behance: ""
+    Dribbble: ""
+    Wordpress: ""
+    Vine: ""
+    Googlescholar: ""
+    Researchgate: ""
+    Mastodon: ""
+    Thingiverse: ""
+    Devto: ""
+    Gitea: ""
+    XMPP: ""
+    Matrix: ""
+    Bilibili: ""
+    ORCID: ""
+    Liberapay: ""
+    Ko-Fi: ""
+    BuyMeaCoffee: ""
+    Linktree: ""
+    QQ: ""
+    QQGroup: ""
+    Diaspora: ""
+    CSDN: ""
+    Discord: ""
+    DiscordInvite: ""
+    Lichess: ""
+    Pleroma: ""
+    Kaggle: ""
+    MediaWiki: ""
+    Plume: ""
+    HackTheBox: ""
+    RootMe: ""
+    Feishu: ""
+    TryHackMe: ""
+    Douyin: ""
+    TikTok: ""
+    Phone: ""
+    Email: "hcplantern@outlook.com"
+    RSS: true
+  page:
+    authorAvatar: true
+    hiddenFromHomePage: false
+    hiddenFromSearch: false
+    hiddenFromRss: false
+    hiddenFromRelated: false
+    twemoji: false
+    lightgallery: false
+    ruby: true
+    fraction: true
+    fontawesome: true
+    license: <a rel="license external nofollow noopener noreferrer"
+      href="https://creativecommons.org/licenses/by-nc-sa/4.0/"
+      target="_blank">CC BY-NC-SA 4.0</a>
+    linkToMarkdown: true
+    linkToSource: true
+    linkToEdit: true
+    linkToReport: true
+    rssFullText: false
+    pageStyle: normal
+    autoBookmark: false
+    wordCount: true
+    readingTime: true
+    endFlag: ""
+    instantPage: false
+    collectionList: false
+    collectionNavigation: false
+    repost:
+      enable: false
+      url: ""
+    toc:
+      enable: true
+      keepStatic: false
+      auto: true
+      position: right
+    expirationReminder:
+      enable: false
+      reminder: 90
+      warning: 180
+      closeComment: false
+    heading:
+      number:
+        enable: false
+        format:
+          h1: "{title}"
+          h2: "{h2} {title}"
+          h3: "{h2}.{h3} {title}"
+          h4: "{h2}.{h3}.{h4} {title}"
+          h5: "{h2}.{h3}.{h4}.{h5} {title}"
+          h6: "{h2}.{h3}.{h4}.{h5}.{h6} {title}"
+    math:
+      enable: true
+      inlineLeftDelimiter: ""
+      inlineRightDelimiter: ""
+      blockLeftDelimiter: ""
+      blockRightDelimiter: ""
+      copyTex: true
+      mhchem: true
+    code:
+      copy: true
+      edit: true
+      maxShownLines: 10
+    mapbox:
+      accessToken: ""
+      lightStyle: mapbox://styles/mapbox/light-v9
+      darkStyle: mapbox://styles/mapbox/dark-v9
+      navigation: true
+      geolocate: true
+      scale: true
+      fullscreen: true
+    cacheRemoteImages:
+      enable: false
+      replace: false
+    related:
+      enable: false
+      count: 5
+    reward:
+      enable: false
+      animation: false
+      position: after
+      mode: static
+      ways: {}
+    share:
+      enable: true
+      Twitter: true
+      Facebook: true
+      Linkedin: false
+      Whatsapp: false
+      Pinterest: false
+      Tumblr: false
+      HackerNews: false
+      Reddit: false
+      VK: false
+      Buffer: false
+      Xing: false
+      Line: false
+      Instapaper: false
+      Pocket: false
+      Flipboard: false
+      Weibo: true
+      Myspace: false
+      Blogger: false
+      Baidu: false
+      Odnoklassniki: false
+      Evernote: false
+      Skype: false
+      Trello: false
+      Mix: false
+    comment:
+      enable: true
+      artalk:
+        enable: false
+        server: https://yourdomain
+        site: 默认站点
+        placeholder: ""
+        noComment: ""
+        sendBtn: ""
+        editorTravel: true
+        flatMode: auto
+        lightgallery: false
+        locale: ""
+        emoticons: ""
+        nestMax: 2
+        nestSort: DATE_ASC
+        vote: true
+        voteDown: false
+        uaBadge: true
+        listSort: true
+        imgUpload: true
+        preview: true
+        versionCheck: true
+      disqus:
+        enable: false
+        shortname: ""
+      gitalk:
+        enable: false
+        owner: ""
+        repo: ""
+        clientId: ""
+        clientSecret: ""
+      valine:
+        enable: false
+        appId: ""
+        appKey: ""
+        placeholder: ""
+        avatar: mp
+        meta: ""
+        requiredFields: ""
+        pageSize: 10
+        lang: ""
+        visitor: true
+        recordIP: true
+        highlight: true
+        enableQQ: false
+        serverURLs: ""
+        emoji: ""
+        commentCount: true
+      waline:
+        enable: false
+        serverURL: ""
+        pageview: false
+        emoji:
+          - //unpkg.com/@waline/emojis@1.1.0/weibo
+        meta:
+          - nick
+          - mail
+          - link
+        requiredMeta: []
+        login: enable
+        wordLimit: 0
+        pageSize: 10
+        imageUploader: false
+        highlighter: false
+        comment: false
+        texRenderer: false
+        search: false
+        recaptchaV3Key: ""
+        reaction: false
+      facebook:
+        enable: false
+        width: 100%
+        numPosts: 10
+        appId: ""
+        languageCode: ""
+      telegram:
+        enable: false
+        siteID: ""
+        limit: 5
+        height: ""
+        color: ""
+        colorful: true
+        dislikes: false
+        outlined: false
+      commento:
+        enable: false
+      utterances:
+        enable: false
+        repo: ""
+        issueTerm: pathname
+        label: ""
+        lightTheme: github-light
+        darkTheme: github-dark
+      twikoo:
+        enable: false
+        envId: ""
+        region: ""
+        path: ""
+        visitor: true
+        commentCount: true
+        lightgallery: false
+        katex: false
+      giscus:
+        enable: true
+        repo: "hcplantern/hcplantern.github.io"
+        repoId: "R_kgDOLApgzQ"
+        category: "Announcements"
+        categoryId: "DIC_kwDOLApgzc4CcNyv"
+        mapping: "pathname"
+        strict: "0"
+        term: ""
+        reactionsEnabled: "1"
+        emitMetadata: "0"
+        inputPosition: top
+        lightTheme: light
+        darkTheme: dark
+        lazyLoad: true
+    library:
+      css: {}
+      js: {}
+    seo:
+      images: []
+      publisher:
+        name: ""
+        logoUrl: ""
+  typeit:
+    speed: 100
+    cursorSpeed: 1000
+    cursorChar: "|"
+    duration: -1
+    loop: false
+  mermaid:
+    themes:
+      - default
+      - dark
+  pangu:
+    enable: false
+    selector: article
+  watermark:
+    enable: false
+    content: ""
+    opacity: 0.1
+    width: 150
+    height: 20
+    rowSpacing: 60
+    colSpacing: 30
+    rotate: 15
+    fontSize: 0.85
+    fontFamily: inherit
+  ibruce:
+    enable: true
+    enablePost: false
+  verification:
+    google: ""
+    bing: ""
+    yandex: ""
+    pinterest: ""
+    baidu: ""
+    so: ""
+    sogou: ""
+  seo:
+    image: ""
+    thumbnailUrl: ""
+  analytics:
+    enable: false
+    google:
+      id: ""
+      anonymizeIP: true
+    fathom:
+      id: ""
+      server: ""
+  cookieconsent:
+    enable: true
+    content:
+      message: ""
+      dismiss: ""
+      link: ""
+  cdn:
+    data: ""
+  compatibility:
+    polyfill: false
+    objectFit: false
+  githubCorner:
+    enable: false
+    permalink: https://github.com/hugo-fixit/FixIt
+    title: View source on GitHub
+    position: right
+  gravatar:
+    enable: true
+    host: www.gravatar.com
+    style: ""
+  backToTop:
+    enable: true
+    scrollpercent: false
+  readingProgress:
+    enable: false
+    start: left
+    position: top
+    reversed: false
+    light: ""
+    dark: ""
+    height: 2px
+  pace:
+    enable: false
+    color: blue
+    theme: minimal
+  customFilePath: {}
+  dev:
+    enable: false
+    c4u: false
+    githubToken: ""
+    mDevtools:
+      enable: false
+      type: vConsole
