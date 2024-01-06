@@ -3,7 +3,7 @@ id: 20230909194532
 title: An Interactive Guide to Flexbox
 aliases:
   - Flexbox
-date: 2023-09-09T19:45+08:00
+date: 2023-09-09
 draft: false
 tags:
   - frontend
