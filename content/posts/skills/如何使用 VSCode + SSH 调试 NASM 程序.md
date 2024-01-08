@@ -34,7 +34,9 @@ hello
     └── tasks.json
 ```
 
-==开始之前，把 hello 文件夹添加到工作区，或者选择直接将该文件夹在 vscode 中打开为根目录==
+{{<admonition warning "注意">}}
+开始之前，把 hello 文件夹添加到工作区，或者选择直接将该文件夹在 vscode 中打开为根目录
+{{</admonition>}}
 
 - 主程序 `hello.asm`
 ```nasm
