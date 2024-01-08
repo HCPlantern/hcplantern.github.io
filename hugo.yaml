@@ -13,6 +13,17 @@ enableGitInfo: false
 enableEmoji: true
 menu:
   main:
+    - identifier: movie
+      parent: ""
+      pre: ""
+      post: ""
+      name: 书影音
+      url: /movie/
+      title: ""
+      weight: 1
+      params:
+        icon: fa-solid fa-film
+        draft: true
     - identifier: archives
       parent: ""
       pre: ""
@@ -20,7 +31,7 @@ menu:
       name: 归档
       url: /archives/
       title: ""
-      weight: 1
+      weight: 10
       params:
         class: ""
         draft: false
@@ -33,7 +44,7 @@ menu:
       name: 分类
       url: /categories/
       title: ""
-      weight: 2
+      weight: 11
       params:
         icon: fa-solid fa-folder-tree
     - identifier: tags
@@ -43,7 +54,7 @@ menu:
       name: 标签
       url: /tags/
       title: “"
-      weight: 3
+      weight: 12
       params:
         icon: fa-solid fa-tags
     - identifier: about
@@ -53,7 +64,7 @@ menu:
       name: 关于我
       url: /about/
       title: ""
-      weight: 4
+      weight: 13
       params:
         icon: fa-solid fa-circle-info
 related:
