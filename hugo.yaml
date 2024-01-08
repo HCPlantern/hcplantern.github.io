@@ -42,10 +42,20 @@ menu:
       post: ""
       name: 标签
       url: /tags/
-      title: ""
+      title: “"
       weight: 3
       params:
         icon: fa-solid fa-tags
+    - identifier: about
+      parent: ""
+      pre: ""
+      post: ""
+      name: 关于我
+      url: /about/
+      title: ""
+      weight: 4
+      params:
+        icon: fa-solid fa-circle-info
 related:
   includeNewer: false
   threshold: 80
@@ -181,7 +191,7 @@ params:
   images: []
   enablePWA: true
   externalIcon: false
-  navigationReverse: false
+  navigationReverse: true
   withSiteTitle: true
   titleDelimiter: "-"
   indexWithSubtitle: false
@@ -189,7 +199,7 @@ params:
   author:
     name: "hcplantern"
     email: "hcplantern@outlook.com"
-    link: ""
+    link: "https://hcplantern.top"
     avatar: ""
   gitInfo:
     repo: ""
@@ -206,7 +216,7 @@ params:
       light: "#f8f8f8"
       dark: "#252627"
   search:
-    enable: false
+    enable: true
     type: fuse
     contentLength: 4000
     placeholder: ""
@@ -241,15 +251,15 @@ params:
       name: ""
       typeit: false
   breadcrumb:
-    enable: false
-    sticky: false
+    enable: true
+    sticky: true
     showHome: false
   footer:
     enable: true
     custom: ""
     copyright: true
     author: true
-    since: ""
+    since: "2023"
     gov: ""
     icp: ""
     license: ""
@@ -417,15 +427,15 @@ params:
     linkToSource: true
     linkToEdit: true
     linkToReport: true
-    rssFullText: false
+    rssFullText: true
     pageStyle: normal
     autoBookmark: false
     wordCount: true
     readingTime: true
     endFlag: ""
-    instantPage: false
-    collectionList: false
-    collectionNavigation: false
+    instantPage: true
+    collectionList: true
+    collectionNavigation: true
     repost:
       enable: false
       url: ""
@@ -631,7 +641,7 @@ params:
     seo:
       images: []
       publisher:
-        name: ""
+        name: "hcplantern"
         logoUrl: ""
   typeit:
     speed: 100
@@ -711,7 +721,7 @@ params:
     dark: ""
     height: 2px
   pace:
-    enable: false
+    enable: true
     color: blue
     theme: minimal
   customFilePath: {}

@@ -1,30 +1,32 @@
 ---
 id: 20230909194532
 title: An Interactive Guide to Flexbox
-aliases:
-  - Flexbox
 date: 2023-09-09
 draft: false
 tags:
   - frontend
   - css
+categories:
+  - study-notes
+featuredImage: https://r2.hcplantern.top/2023/09/10/20230910-205025.gif
 ---
 
+<!--more-->
 
-{{< admonition cite "Source Article">}}
+{{<admonition quote "Source Article">}}
   - [An Interactive Guide to Flexbox](https://www.joshwcomeau.com/css/interactive-guide-to-flexbox)
 
-  {{< /admonition >}}
+{{</admonition >}}
 
 ![](https://r2.hcplantern.top/2023/09/10/20230910-205025.gif)
 
 # Introduction
 
-{{< admonition hint "Layout Algorithm">}}
-**Each layout algorithm is designed to solve a specific problem.** The default *Flow* layout is meant to create digital documents; it's essentially the _Microsoft Word_ layout algorithm. Headings and paragraphs stack vertically as blocks, while things like text, links, and images sit inconspicuously within these blocks.
+{{<admonition abstract "Layout Algorithm">}}
+**Each layout algorithm is designed to solve a specific problem.** The default *Flow* layout is meant to create digital documents; it's essentially the *Microsoft Word* layout algorithm. Headings and paragraphs stack vertically as blocks, while things like text, links, and images sit inconspicuously within these blocks.
 
 While *Flexbox* is all about *flexibility*. We can control whether items grow or shrink, how the extra space is distributed, and more.
-{{< /admonition >}}
+{{</admonition >}}
 
 # Flex direction
 
@@ -39,14 +41,14 @@ Flex direction determines the *primary axis*, and the *cross axis* that runs pe
 
 ![](https://r2.hcplantern.top/2023/09/10/20230910-204914.gif)
 
-{{< admonition cite "4 Key Terms to Understand Alignment" >}}
+{{<admonition note "4 Key Terms to Understand Alignment" >}}
 
 - `justify` — to position something along the *primary axis*.
 - `align` — to position something along the *cross axis*.
 - `content` — a **group** of “stuff” that can be distributed.
 - `items` — **single** items that can be positioned individually.
 
-{{< /admonition >}}
+{{</admonition >}}
 
 ## justify-content
 
@@ -81,15 +83,17 @@ There's no `justify-self` because you cannot adjust one single element across th
 - In *Flow* layout, `width` is a _hard constraint_.
 - In _Flexbox_, however, the `width` property is more of a **suggestion** than a hard constraint.
 
-> [!hint] CSS mental model
-> > [!fail] wrong model
-> > Think of the CSS language as a collection of properties
-> 
-> As we've seen, the `width` property behaves differently depending on the layout mode used!
-> 
-> > [!success] right model
-> > CSS as a collection of layout modes. Each layout mode is an algorithm that can implement or redefine each CSS property. We provide an algorithm with our CSS declarations (key/value pairs), and the algorithm decides how to use them.
->
+{{<admonition type=tip title="CSS mental model" open=true >}}
+  {{<admonition type=failure title="wrong model" open=true >}}
+  Think of the CSS language as a collection of properties
+  {{</admonition >}}
+
+As we've seen, the `width` property behaves differently depending on the layout mode used!
+
+  {{<admonition type=success title="right model" open=true >}}
+  CSS as a collection of layout modes. Each layout mode is an algorithm that can implement or redefine each CSS property. We provide an algorithm with our CSS declarations (key/value pairs), and the algorithm decides how to use them.
+  {{</admonition >}}
+{{</admonition >}}
 
 # Growing and Shrinking
 
@@ -109,7 +113,7 @@ There's no `justify-self` because you cannot adjust one single element across th
 
 ## flex-shrink
 
-==What if our children are too big for their container?==
+**What if our children are too big for their container?**
 
 ![](https://r2.hcplantern.top/2023/09/10/20230910-211858.gif)
 
@@ -139,8 +143,12 @@ Using `justify-content: space-between` cannot control space between child elemen
 
 So both do the same thing. But why auto margins? 
 
-> [!hint] Auto Margins
-> The auto-margins solution treats the extra space _as a resource_, and deciding exactly where it should go. This solution makes space to become **margin** while the flex-grow solution gives free space to the **body**.
+{{<admonition type=tip title="Auto Margins" open=true >}}
+
+The auto-margins solution treats the extra space _as a resource_, and deciding exactly where it should go. This solution makes space to become **margin** while the flex-grow solution gives free space to the **body**.
+
+{{</admonition >}}
+
 
 # Wrapping
 
@@ -153,9 +161,12 @@ When elements wraps, we can use it to _align the rows themselves._
 
 ![](https://r2.hcplantern.top/2023/09/10/20230910-213221.gif)
 
-> [!abstract] Summary
-> - `flex-wrap: wrap` gives us two rows of stuff.
-> - Within each row, `align-items` lets us slide each individual child up or down
-> - Zooming out, however, we have these two rows within a single Flex context! The cross axis will now intersect _two_ rows, not one. And so, we can't move the rows individually, we need to distribute them _as a group_.
-> - Using our definitions from above, we're dealing with _content_, not _items_. But we're also still talking about the cross axis! And so the property we want is `align-content`.
+{{<admonition abstract "Summary">}}
 
+- `flex-wrap: wrap` gives us two rows of stuff.
+- Within each row, `align-items` lets us slide each individual child up or down
+- Zooming out, however, we have these two rows within a single Flex context! The cross axis will now intersect *two* rows, not one. And so, we can't move the rows individually, we need to distribute them *as a group*.
+- Using our definitions from above, we're dealing with *content*, not *items*. But we're also still talking about the cross axis! And so the property we want is `align-content`.
+
+{{</admonition >}}
+   
