@@ -268,7 +268,7 @@ params:
       hugoLogo: true
       themeLogo: true
     siteTime:
-      enable: false
+      enable: true
       animate: true
       icon: fa-solid fa-heartbeat
       pre: ""
