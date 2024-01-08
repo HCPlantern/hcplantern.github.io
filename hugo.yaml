@@ -17,7 +17,7 @@ menu:
       parent: ""
       pre: ""
       post: ""
-      name: Archives
+      name: 归档
       url: /archives/
       title: ""
       weight: 1
@@ -30,7 +30,7 @@ menu:
       parent: ""
       pre: ""
       post: ""
-      name: Categories
+      name: 分类
       url: /categories/
       title: ""
       weight: 2
@@ -40,7 +40,7 @@ menu:
       parent: ""
       pre: ""
       post: ""
-      name: Tags
+      name: 标签
       url: /tags/
       title: ""
       weight: 3
@@ -307,7 +307,7 @@ params:
       enable: true
       paginate: 6
   social:
-    GitHub: "https://github.com/hcplantern"
+    GitHub: "hcplantern"
     Linkedin: ""
     Twitter: ""
     Instagram: ""
@@ -345,16 +345,18 @@ params:
     Hackernews: ""
     Kickstarter: ""
     Patreon: ""
-    Steam: "https://steamcommunity.com/profiles/76561198339854999/"
+    Steam: 
+      id: "76561198339854999"
+      prefix: "https://steamcommunity.com/profiles/"
     Twitch: ""
     Strava: ""
     Skype: ""
     Whatsapp: ""
     Zhihu: ""
     Douban: 
-      - prefix: "https://www.douban.com/people/"
-      - id: "148561316"
-      - title: "豆瓣（弃用）"
+      id: will101
+      prefix: https://neodb.social/users
+      title: 豆瓣替代-NeoDB
     Angellist: ""
     Slidershare: ""
     Jsfiddle: ""
