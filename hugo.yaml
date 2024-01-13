@@ -23,7 +23,6 @@ menu:
       weight: 1
       params:
         icon: fa-solid fa-film
-        draft: true
     - identifier: archives
       parent: ""
       pre: ""
@@ -366,7 +365,7 @@ params:
     Hackernews: ""
     Kickstarter: ""
     Patreon: ""
-    Steam: 
+    Steam:
       id: "76561198339854999"
       prefix: "https://steamcommunity.com/profiles/"
     Twitch: ""
@@ -374,7 +373,7 @@ params:
     Skype: ""
     Whatsapp: ""
     Zhihu: ""
-    Douban: 
+    Douban:
       id: will101
       prefix: https://neodb.social/users
       title: 豆瓣替代-NeoDB
