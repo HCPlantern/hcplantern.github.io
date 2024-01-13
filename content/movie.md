@@ -2,9 +2,24 @@
 title: 书影音
 ---
 
-{{< neodb "https://neodb.social/book/5SJvkuHNGL4XhBddW2J4EJ" >}}
-{{< neodb "https://neodb.social/book/5SJvkuHNGL4XhBddW2J4EJ" >}}
-{{< neodb "https://neodb.social/movie/1bgVODaWCBKlCQ1AuGlLzC" >}}
-{{< neodb "https://neodb.social/tv/season/5es8Us1HHOhVz3UlLmTspr" >}}
-{{< neodb "https://neodb.social/game/5pvs201VxbkldH4LOEtDVt" >}}
-{{< neodb "https://neodb.social/podcast/5tlY7lSI0WfXcoHstz7u4S" >}}
+## [想读的书](https://neodb.social/users/will101/wishlist/book/)
+
+{{< neodb book wishlist>}}
+
+## 读过的书
+
+## 想看的电影
+
+## 看过的电影
+
+## 想看的剧集
+
+## 看过的剧集
+
+## 在听的博客
+
+## 玩过的游戏
+
+## 看过的演出
+
+{{< neodb-single "https://neodb.social/book/5SJvkuHNGL4XhBddW2J4EJ" >}}
