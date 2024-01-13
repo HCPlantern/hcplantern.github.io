@@ -42,8 +42,10 @@
 
     .db-card-subject {
         display: flex;
+        align-items: flex-start;
         line-height: 1.6;
-        padding: 1rem;
+        padding: 12px;
+        position: relative;
     }
 
     .dark .db-card {
@@ -51,24 +53,13 @@
     }
 
     .db-card-content {
-        display: flex;
-        flex-direction: column;
+        flex: 1 1 auto;
     }
 
     .db-card-post {
-        flex: 0 0 auto;
-        flex-basis: 6rem;
+        margin-right: 15px;
         display: flex;
-        align-items: center; /* Aligns image vertically */
-        justify-content: center; /* Centers image horizontally */
-        margin-right: 1.5rem;
-    }
-
-    .db-card-post img {
-        max-width: 100%; /* Image can grow up to the container's width */
-        max-height: 100%; /* Image can grow up to the container's height */
-        border-radius: 4px;
-        object-fit: cover; /* Keeps the aspect ratio of the image */
+        flex: 0 0 auto;
     }
 
     .db-card-title {
@@ -81,8 +72,6 @@
     }
 
     .db-card-abstract {
-        display: flex;
-        flex: 1 1 auto;
         font-size: 14px;
         overflow: hidden;
         max-height: 4rem;
