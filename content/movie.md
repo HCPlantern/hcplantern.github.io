@@ -31,38 +31,38 @@ NeoDB 是一个去中心化的开源的社区平台，支持书籍、电影、�
 
 {{< neodb book wishlist>}}
 
-## 读过的书
+## [读过的书](https://neodb.social/users/will101/complete/book/)
 
 {{< neodb book complete>}}
 
-## 想看的电影
+## [想看的电影](https://neodb.social/users/will101/wishlist/movie/)
 
 {{< neodb movie wishlist>}}
 
-## 看过的电影
+## [看过的电影](https://neodb.social/users/will101/complete/movie/)
 
 {{< neodb movie complete>}}
 
-## 想看的剧集
+## [想看的剧集](https://neodb.social/users/will101/wishlist/tv/)
 
 {{< neodb tv wishlist>}}
 
-## 看过的剧集
+## [看过的剧集](https://neodb.social/users/will101/complete/tv/)
 
 {{< neodb tv complete>}}
 
-## 玩过的游戏
+## [玩过的游戏](https://neodb.social/users/will101/complete/game/)
 
 {{< neodb game complete>}}
 
-## 在听的播客
+## [在听的播客](https://neodb.social/users/will101/progress/podcast/)
 
 {{< neodb podcast progress>}}
 
-## 听过的音乐
+## [听过的音乐](https://neodb.social/users/will101/complete/music/)
 
 {{< neodb music complete>}}
 
-## 看过的演出
+## [看过的演出](https://neodb.social/users/will101/complete/performance/)
     
 {{< neodb performance complete>}}

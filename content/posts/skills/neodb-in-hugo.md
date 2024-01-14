@@ -116,7 +116,7 @@ async function handleRequest(request) {
 {{ $type = "complete" }}
 {{ end }}
 
-{{ $url := printf "https://neodb-api.hcplantern.top/%s?type=%s" $category $type }}
+{{ $url := printf "https://your-worker-url/%s?type=%s" $category $type }}
 
 {{ $json := getJSON $url}}
 
@@ -129,15 +129,15 @@ async function handleRequest(request) {
         </a>
         {{ if .item.rating }}
         <div class="rate">
-            <span><b>🌟{{ .item.rating }}</b></span>
+            <span><b>{{ .item.rating }}</b>🌟</span>
             <br>
-            <span class="rating-count"> {{.item.rating_count}} 人评分</span>
+            <span class="rating-count"> {{.item.rating_count}}人评分</span>
         </div>
         {{ else}}
         <div class="rate">
-            <span>🌟暂无</span>
+            <span>暂无🌟</span>
             <br>
-            <span class="rating-count"> {{.item.rating_count}} 人评分</span>
+            <span class="rating-count"> {{.item.rating_count}}人评分</span>
         </div>
         {{ end }}
         <h3 class="item-title">{{ .item.display_title }}</h3>
@@ -184,12 +184,11 @@ async function handleRequest(request) {
 
     .item-title {
         font-size: 1rem;
-        padding: 0.5rem;
         text-align: center;
+        margin: 0;
     }
 
 </style>
-
 ```
 
 然后，在页面中使用 shortcode 引用即可：
@@ -208,4 +207,4 @@ async function handleRequest(request) {
 
 ## 效果示例
 
-![NeoDB 示例](https://r2.hcplantern.top/2024/01/14/1705224943.png)
+![NeoDB 示例](https://r2.hcplantern.top/2024/01/14/1705232044.png)

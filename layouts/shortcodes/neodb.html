@@ -20,15 +20,15 @@
         </a>
         {{ if .item.rating }}
         <div class="rate">
-            <span><b>🌟{{ .item.rating }}</b></span>
+            <span><b>{{ .item.rating }}</b>🌟</span>
             <br>
-            <span class="rating-count"> {{.item.rating_count}} 人评分</span>
+            <span class="rating-count"> {{.item.rating_count}}人评分</span>
         </div>
         {{ else}}
         <div class="rate">
-            <span>🌟暂无</span>
+            <span>暂无🌟</span>
             <br>
-            <span class="rating-count"> {{.item.rating_count}} 人评分</span>
+            <span class="rating-count"> {{.item.rating_count}}人评分</span>
         </div>
         {{ end }}
         <h3 class="item-title">{{ .item.display_title }}</h3>
@@ -75,8 +75,8 @@
 
     .item-title {
         font-size: 1rem;
-        padding: 0.5rem;
         text-align: center;
+        margin: 0;
     }
 
 </style>
