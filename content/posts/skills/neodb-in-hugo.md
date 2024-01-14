@@ -7,6 +7,10 @@ tags:
   - 书影音
 categories:
   - skills
+keywords:
+  - NeoDB
+  - Hugo
+  - 观影
 ---
 
 本文介绍 NeoDB 以及通过其 API 和 Hugo Shortcode 将书影音记录整合在 Hugo 中展示的方法。

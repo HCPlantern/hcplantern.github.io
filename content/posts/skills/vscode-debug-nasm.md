@@ -8,6 +8,7 @@ categories:
   - skills
 ---
 
+使用 VSCode 调试 NASM 程序
 <!--more-->
 
 ## 前言

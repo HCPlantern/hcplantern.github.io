@@ -9,8 +9,6 @@ categories:
 
 <!--more-->
 
-# Web 前端开发复习
-
 > 声明：本文部分内容来自 ChatGPT，请谨慎阅读。
 
 ## Introduction
