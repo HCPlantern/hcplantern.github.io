@@ -51,13 +51,17 @@ NeoDB 是一个去中心化的开源的社区平台，支持书籍、电影、�
 
 {{< neodb tv complete>}}
 
-## 在听的博客
-
-{{< neodb podcast progress>}}
-
 ## 玩过的游戏
 
 {{< neodb game complete>}}
+
+## 在听的播客
+
+{{< neodb podcast progress>}}
+
+## 听过的音乐
+
+{{< neodb music complete>}}
 
 ## 看过的演出
     

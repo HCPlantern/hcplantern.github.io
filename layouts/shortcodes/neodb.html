@@ -1,4 +1,4 @@
-<!--Available categories: book, movie, tv, podcast, album, game, performance-->
+<!--Available categories: book, movie, tv, podcast, music, game, performance-->
 {{ $category := .Get 0 }}
 <!--Available types: wishlist, progress, complete-->
 {{ $type := .Get 1 }}
@@ -12,17 +12,26 @@
 {{ $json := getJSON $url}}
 
 <div class="item-gallery">
-    {{ range $value := first 5 $json.data }}
+    {{ range $value := first 10 $json.data }}
     {{ $item := $value.item }}
     <div class="item-card">
-        <a href="{{ $item.id }}" target="_blank" rel="noreferrer">
-            <div class="item-cover-wrapper">
-                <img class="item-cover" src="{{ .item.cover_image_url }}" alt="{{ .item.display_title }}">
-            </div>
-            <div class="item-info">
-                <h3 class="item-title">{{ .item.display_title }}</h3>
-            </div>
+        <a class="item-card-upper" href="{{ $item.id }}" target="_blank" rel="noreferrer">
+            <img class="item-cover" src="{{ .item.cover_image_url }}" alt="{{ .item.display_title }}">
         </a>
+        {{ if .item.rating }}
+        <div class="rate">
+            <span><b>🌟{{ .item.rating }}</b></span>
+            <br>
+            <span style="font-size: 0.8rem; color: grey"> {{.item.rating_count}} 人评分</span>
+        </div>
+        {{ else}}
+        <div class="rate">
+            <span>🌟暂无</span>
+            <br>
+            <span style="font-size: 0.8rem; color: grey"> {{.item.rating_count}} 人评分</span>
+        </div>
+        {{ end }}
+        <h3 class="item-title">{{ .item.display_title }}</h3>
     </div>
     {{ end }}
 </div>
@@ -32,22 +41,28 @@
         display: flex;
         padding: 0 1rem;
         overflow-x: scroll;
+        align-items: baseline;
     }
 
     .item-card {
         display: flex;
         flex-direction: column;
-        justify-content: space-between;
         flex: 0 0 17%;
         margin: 0 0.5rem 1rem;
         border-radius: 5px;
         transition: transform 0.2s;
         width: 8rem;
-        min-width: 6rem;
     }
 
     .item-card:hover {
         transform: translateY(-5px);
+    }
+
+    .rate {
+        text-align: center;
+    }
+
+    .item-card-upper {
     }
 
     .item-cover {
@@ -56,16 +71,10 @@
         border: 2px solid transparent;
     }
 
-    .item-cover-wrapper {
-    }
-
-    .item-info {
-        padding: 0.5rem 0 0.5rem 0.5rem;
-    }
-
     .item-title {
         font-size: 1rem;
-        margin-bottom: 0.5rem;
+        padding: 0.5rem;
+        text-align: center;
     }
 
 </style>
