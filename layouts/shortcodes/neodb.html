@@ -22,13 +22,13 @@
         <div class="rate">
             <span><b>🌟{{ .item.rating }}</b></span>
             <br>
-            <span style="font-size: 0.8rem; color: grey"> {{.item.rating_count}} 人评分</span>
+            <span class="rating-count"> {{.item.rating_count}} 人评分</span>
         </div>
         {{ else}}
         <div class="rate">
             <span>🌟暂无</span>
             <br>
-            <span style="font-size: 0.8rem; color: grey"> {{.item.rating_count}} 人评分</span>
+            <span class="rating-count"> {{.item.rating_count}} 人评分</span>
         </div>
         {{ end }}
         <h3 class="item-title">{{ .item.display_title }}</h3>
@@ -62,7 +62,9 @@
         text-align: center;
     }
 
-    .item-card-upper {
+    .rating-count {
+        font-size: 0.8rem;
+        color: grey;
     }
 
     .item-cover {

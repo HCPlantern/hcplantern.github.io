@@ -325,7 +325,7 @@ params:
       disclaimer: ""
     posts:
       enable: true
-      paginate: 6
+      paginate: 5
   social:
     GitHub: "hcplantern"
     Linkedin: ""
@@ -439,7 +439,7 @@ params:
     linkToReport: true
     rssFullText: true
     pageStyle: normal
-    autoBookmark: false
+    autoBookmark: true
     wordCount: true
     readingTime: true
     endFlag: ""
