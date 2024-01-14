@@ -622,16 +622,16 @@ params:
         lightTheme: github-light
         darkTheme: github-dark
       twikoo:
-        enable: false
-        envId: ""
+        enable: true
+        envId: "https://hugo-twikoo.hcplantern.top/.netlify/functions/twikoo"
         region: ""
         path: ""
         visitor: true
         commentCount: true
-        lightgallery: false
-        katex: false
+        lightgallery: true
+        katex: true
       giscus:
-        enable: true
+        enable: false
         repo: "hcplantern/hcplantern.github.io"
         repoId: "R_kgDOLApgzQ"
         category: "Announcements"
