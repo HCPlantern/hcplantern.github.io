@@ -629,7 +629,7 @@ params:
         visitor: true
         commentCount: true
         lightgallery: true
-        katex: true
+        katex: false
       giscus:
         enable: false
         repo: "hcplantern/hcplantern.github.io"
