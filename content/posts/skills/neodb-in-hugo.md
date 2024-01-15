@@ -13,7 +13,7 @@ keywords:
   - 观影
 ---
 
-本文介绍 NeoDB 以及通过其 API 和 Hugo Shortcode 将书影音记录整合在 Hugo 中展示的方法。
+本文介绍通过 NeoDB API 和 Shortcode 在 Hugo 中创建观影页面的方法。
 <!--more-->
 
 {{<center-quote>}}
