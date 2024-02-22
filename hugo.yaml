@@ -552,7 +552,7 @@ params:
         versionCheck: true
       disqus:
         enable: true
-        shortname: ""
+        shortname: "hcplantern"
       gitalk:
         enable: false
         owner: ""
