@@ -551,7 +551,7 @@ params:
         preview: true
         versionCheck: true
       disqus:
-        enable: false
+        enable: true
         shortname: ""
       gitalk:
         enable: false
@@ -622,7 +622,7 @@ params:
         lightTheme: github-light
         darkTheme: github-dark
       twikoo:
-        enable: true
+        enable: false
         envId: "https://hugo-twikoo.hcplantern.top/.netlify/functions/twikoo"
         region: ""
         path: ""
