@@ -3,69 +3,135 @@ baseURL: https://hcplantern.top
 theme:
   - FixIt
 defaultContentLanguage: zh-cn
-languageCode: zh-CN
-languageName: 简体中文
+languages:
+  zh-cn:
+    weight: 1
+    title: "hcplantern's blog"
+    languageCode: zh-cn
+    languageName: 简体中文
+    contentDir: content/zh-cn
+    menu:
+      main:
+        - identifier: movie
+          parent: ""
+          pre: ""
+          post: ""
+          name: 书影音
+          url: /movie/
+          title: ""
+          weight: 20
+          params:
+            icon: fa-solid fa-film
+        - identifier: archives
+          parent: ""
+          pre: ""
+          post: ""
+          name: 归档
+          url: /archives/
+          title: ""
+          weight: 10
+          params:
+            class: ""
+            draft: false
+            icon: fa-solid fa-archive
+            type: ""
+        - identifier: categories
+          parent: "archives"
+          pre: ""
+          post: ""
+          name: 分类
+          url: /categories/
+          title: ""
+          weight: 11
+          params:
+            icon: fa-solid fa-folder-tree
+        - identifier: tags
+          parent: "archives"
+          pre: ""
+          post: ""
+          name: 标签
+          url: /tags/
+          title: “"
+          weight: 12
+          params:
+            icon: fa-solid fa-tags
+        - identifier: about
+          parent: ""
+          pre: ""
+          post: ""
+          name: 关于我
+          url: /about/
+          title: ""
+          weight: 30
+          params:
+            icon: fa-solid fa-circle-info
+  en:
+    weight: 2
+    title: "hcplantern's blog"
+    languageCode: en
+    languageName: English
+    contentDir: content/en
+    menu:
+      main:
+        - identifier: movie
+          parent: ""
+          pre: ""
+          post: ""
+          name: Movie
+          url: /movie/
+          title: ""
+          weight: 20
+          params:
+            icon: fa-solid fa-film
+        - identifier: archives
+          parent: ""
+          pre: ""
+          post: ""
+          name: Archives
+          url: /archives/
+          title: ""
+          weight: 10
+          params:
+            class: ""
+            draft: false
+            icon: fa-solid fa-archive
+            type: ""
+        - identifier: categories
+          parent: "archives"
+          pre: ""
+          post: ""
+          name: Categories
+          url: /categories/
+          title: ""
+          weight: 11
+          params:
+            icon: fa-solid fa-folder-tree
+        - identifier: tags
+          parent: "archives"
+          pre: ""
+          post: ""
+          name: Tags
+          url: /tags/
+          title: ""
+          weight: 12
+          params:
+            icon: fa-solid fa-tags
+        - identifier: about
+          parent: ""
+          pre: ""
+          post: ""
+          name: About
+          url: /about/
+          title: ""
+          weight: 30
+          params:
+            icon: fa-solid fa-circle-info
 hasCJKLanguage: false
 paginate: 12
 copyright: ""
 enableRobotsTXT: true
 enableGitInfo: false
 enableEmoji: true
-menu:
-  main:
-    - identifier: movie
-      parent: ""
-      pre: ""
-      post: ""
-      name: 书影音
-      url: /movie/
-      title: ""
-      weight: 1
-      params:
-        icon: fa-solid fa-film
-    - identifier: archives
-      parent: ""
-      pre: ""
-      post: ""
-      name: 归档
-      url: /archives/
-      title: ""
-      weight: 10
-      params:
-        class: ""
-        draft: false
-        icon: fa-solid fa-archive
-        type: ""
-    - identifier: categories
-      parent: ""
-      pre: ""
-      post: ""
-      name: 分类
-      url: /categories/
-      title: ""
-      weight: 11
-      params:
-        icon: fa-solid fa-folder-tree
-    - identifier: tags
-      parent: ""
-      pre: ""
-      post: ""
-      name: 标签
-      url: /tags/
-      title: “"
-      weight: 12
-      params:
-        icon: fa-solid fa-tags
-    - identifier: about
-      parent: ""
-      pre: ""
-      post: ""
-      name: 关于我
-      url: /about/
-      title: ""
-      weight: 13
-      params:
-        icon: fa-solid fa-circle-info
 related:
   includeNewer: false
   threshold: 80
