@@ -107,7 +107,7 @@ async function handleRequest(request) {
 
 ## Integrating Data into Hugo with Hugo Shortcode
 
-Create `neodb.html`` in `/layouts/shortcodes``, replacing with your Cloudflare Worker URL:
+Create `neodb.html` in `/layouts/shortcodes`, replacing with your Cloudflare Worker URL:
 
 ```html
 <!--Available categories: book, movie, tv, podcast, music, game, performance-->
