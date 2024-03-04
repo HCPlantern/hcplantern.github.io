@@ -11,6 +11,7 @@ keywords:
   - NeoDB
   - Hugo
   - 观影
+featuredImagePreview: https://r2.hcplantern.top/2024/03/04/1709561650.png
 ---
 
 This article explains how to create a movie viewing page in Hugo using the NeoDB API and Shortcode.

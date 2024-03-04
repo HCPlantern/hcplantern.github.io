@@ -11,6 +11,7 @@ keywords:
   - NeoDB
   - Hugo
   - 观影
+featuredImagePreview: https://r2.hcplantern.top/2024/03/04/1709561650.png
 ---
 
 本文介绍通过 NeoDB API 和 Shortcode 在 Hugo 中创建观影页面的方法。
