@@ -1,5 +1,5 @@
 ---
-title: 记录一个 MoviePilot NeoDB 插件
+title: A MoviePilot NeoDB Plugin
 date: 2024-03-04
 tags:
   - neodb
@@ -11,40 +11,39 @@ keywords:
   - MoviePilot
 ---
 
-我开发了一个 MoviePilot NeoDB 插件
+I developed a MoviePilot NeoDB plugin
 <!--more-->
 
-## 前言
+## Preface
 
-[MoviePilot](https://github.com/jxxghp/MoviePilot) 是一个非常好用的 NAS 影音平台自动化工具，其前身为 [NasTool](https://github.com/NAStool/nas-tools)。MP 通过插件的方式支持了很多额外功能，包括豆瓣想看自动订阅。但是我最近[弃用豆瓣](/posts/neodb-in-hugo/)了，所以我在原有的[豆瓣插件](https://github.com/jxxghp/MoviePilot-Plugins/blob/main/plugins/doubansync/__init__.py)上开发了一个 NeoDB 插件，可以做到在 NeoDB 上点想看，插件运行自动添加订阅并执行下载。
+[MoviePilot](https://github.com/jxxghp/MoviePilot) is a very handy NAS media platform automation tool, formerly known as [NasTool](https://github.com/NAStool/nas-tools). MP supports many additional features through plugins, including automatic subscription for DouBan's watchlist. However, I recently [abandoned DouBan](/posts/neodb-in-hugo/), so I developed a NeoDB plugin based on the original [DouBan plugin](https://github.com/jxxghp/MoviePilot-Plugins/blob/main/plugins/doubansync/__init__.py), which allows for adding subscriptions and executing downloads automatically when marking something as "want to watch" on NeoDB.
 
-{{<image src="https://r2.hcplantern.top/2024/03/04/1709554249.png" caption="MoviePilot 界面">}}
+{{<image src="https://r2.hcplantern.top/2024/03/04/1709554249.png" caption="MoviePilot Interface">}}
 
-## 给 MoviePilot 开发插件
+## Developing Plugins for MoviePilot
 
-MP 插件本质上是一个 Python 脚本，它可以通过调用 MP 的 API 来实现自动化功能。[插件仓库在这里](https://github.com/jxxghp/MoviePilot-Plugins)。插件的开发非常简单，只需要继承 `_PluginBase` 类，然后实现主要的几个方法即可。其实大部分方法都和豆瓣同步的插件一致，基本只需要修改`sync`这一个方法即可。
+A MP plugin is essentially a Python script that can automate tasks through calling MP's API. [The plugin repository is here](https://github.com/jxxghp/MoviePilot-Plugins). Developing a plugin is very simple; you only need to inherit the `_PluginBase` class and then implement a few main methods. In fact, most methods are consistent with those of the DouBan sync plugin, and you basically only need to modify the `sync` method.
 
-插件实现的思路是，首先获取插件配置页面的 NeoDB 用户 Token。Token 可以是多个账户的。随后通过 NeoDB 的 API 获取用户的想看记录，然后通过 MP 的 API 添加订阅。
+The idea behind the plugin implementation is to first obtain the NeoDB user Token from the plugin configuration page. There can be multiple accounts' Tokens. Then, it retrieves the user's watchlist records through NeoDB's API and adds subscriptions through MP's API.
 
-部分代码如下：
-
+Partial code as follows:
 ```python
     def sync(self):
         """
-        通过用户RSS同步豆瓣想看数据
+        Sync wish-to-watch data from users' RSS
         """
         if not self._tokens:
             return
-        # 遍历所有用户
+        # Iterate through all users
         for token in self._tokens.split(","):
             if not token:
                 continue
-            # 请求头含 Token
+            # Header includes Token
             headers = {"Authorization": f"Bearer {token}"}
-            # 获取用户名
+            # Get username
             username = self.__get_username(token)
-            # 同步每个 NeoDB 用户的数据
-            logger.info(f"开始同步 NeoDB 用户 {username} 的想看数据 ...")
+            # Sync data for each NeoDB user
+            logger.info(f"Starting to sync wish-to-watch data for NeoDB user {username} ...")
             results = []
             try:
                 movie_response = requests.get(self._movie_url, headers=headers)
@@ -55,15 +54,15 @@ MP 插件本质上是一个 Python 脚本，它可以通过调用 MP 的 API 来
                 try:
                     results = movie_response.json().get("data", []) + tv_response.json().get("data", [])
                 except ValueError:
-                    logger.error("用户数据解析失败")
+                    logger.error("Failed to parse user data")
                     continue
             except Exception as e:
-                logger.error(f"获取数据失败：{str(e)}")
+                logger.error(f"Failed to retrieve data: {str(e)}")
                 continue
             if not results:
-                logger.info(f"用户 {username} 没有想看数据")
+                logger.info(f"No wish-to-watch data for user {username}")
                 continue
-            # 遍历该用户的所有想看条目
+            # Iterate through all wish-to-watch entries for that user
             for result in results:
                 try:
                     # Take the url as the unique identifier. For example: /movie/2fEdnxYWozPayayizQmk5M
@@ -71,29 +70,29 @@ MP 插件本质上是一个 Python 脚本，它可以通过调用 MP 的 API 来
                     title = result['item']['title']
                     category = result['item']['category']
                     api_url = result['item']['api_url']
-                    # 判断是否在天数范围内
+                    # Check if it's within the date range
                     if not self.__is_in_date_range(result.get("created_time"), title):
                         continue
-                    # 检查是否处理过
+                    # Check if it's already processed
                     if not item_id or item_id in [h.get("neodb_id") for h in history]:
-                        logger.info(f'标题：{title}，NeoDB ID：{item_id} 已处理过')
+                        logger.info(f'Title: {title}, NeoDB ID: {item_id} has been processed')
                         continue
-                    # 获取条目详细信息 item_info
+                    # Get detailed information of the item (item_info)
                     try:
                         item_info = requests.get(f"https://neodb.social{api_url}").json()
                     except Exception as e:
-                        logger.error(f"获取条目信息失败：{str(e)}")
+                        logger.error(f"Failed to get item details: {str(e)}")
                         continue
-            # 随后通过 MP API 识别媒体信息、添加订阅、下载、存储插件历史记录等
+            # Then, identify media information, add subscriptions, download, and store plugin history records through MP API
 ```
 
 ## [NeoDB API](https://neodb.social/developer/)
 
-简要记录一下用到的 NeoDB API
+A brief record of the NeoDB API used
 
 ### User
 
-`/api/me`: 获取用户基本信息
+`/api/me`: Get basic user information获取用户基本信息
 
 ```json
 {
@@ -107,7 +106,7 @@ MP 插件本质上是一个 Python 脚本，它可以通过调用 MP 的 API 来
 
 ### User Shelf
 
-`/api/me/shelf/{type}?category={category}`: 用户的记录，`type=wishlist` 就是想看列表
+`/api/me/shelf/{type}?category={category}`: User record，`type=wishlist` is wishlist
 
 ```json
 {
@@ -151,8 +150,6 @@ MP 插件本质上是一个 Python 脚本，它可以通过调用 MP 的 API 来
 ```
 
 ### Movie / TV item details
-
-这个 API 可以获取到详细的电影或者剧集信息。这个 API 相比上一个多了影视条目日期。
 
 `/api/movie/{item_uuid}` or `/api/tv/season/{tv_season_uuid}`
 
@@ -224,6 +221,6 @@ MP 插件本质上是一个 Python 脚本，它可以通过调用 MP 的 API 来
 
 ## 结语
 
-NeoDB 的开放性和丰富的 API 让开发插件变得非常容易~~豆瓣出来挨打~~，希望它能够成为一个更好的影视记录平台。
+NeoDB's openness and rich API make plugin development very easy ~~DouBan is shit~~, hoping it can become a better platform for movie and TV show tracking.
 
-如果你也是 MP 和 NeoDB 用户，欢迎在这里或者[插件仓库](https://github.com/jxxghp/MoviePilot-Plugins)提出更多问题和建议。
+If you are also a MP and NeoDB user, feel free to ask more questions or make suggestions here or in the [plugin repository](https://github.com/jxxghp/MoviePilot-Plugins).
