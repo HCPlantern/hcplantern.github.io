@@ -432,8 +432,8 @@ params:
     Kickstarter: ""
     Patreon: ""
     Steam:
-      id: "76561198339854999"
-      prefix: "https://steamcommunity.com/profiles/"
+      id: 76561198339854999
+      prefix: https://steamcommunity.com/profiles
     Twitch: ""
     Strava: ""
     Skype: ""
@@ -453,7 +453,10 @@ params:
     Vine: ""
     Googlescholar: ""
     Researchgate: ""
-    Mastodon: ""
+    Mastodon:
+      id: "@dejavu4817"
+      prefix: https://m.cmx.im
+      title: 豆瓣替代-NeoDB
     Thingiverse: ""
     Devto: ""
     Gitea: ""
