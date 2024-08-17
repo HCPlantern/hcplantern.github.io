@@ -431,9 +431,6 @@ params:
     Hackernews: ""
     Kickstarter: ""
     Patreon: ""
-    Steam:
-      id: 76561198339854999
-      prefix: https://steamcommunity.com/profiles
     Twitch: ""
     Strava: ""
     Skype: ""
@@ -456,6 +453,9 @@ params:
     Mastodon:
       id: "@dejavu4817"
       prefix: https://m.cmx.im
+    Steam:
+      id: 76561198339854999
+      prefix: https://steamcommunity.com/profiles
     Thingiverse: ""
     Devto: ""
     Gitea: ""
