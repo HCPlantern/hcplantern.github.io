@@ -456,7 +456,6 @@ params:
     Mastodon:
       id: "@dejavu4817"
       prefix: https://m.cmx.im
-      title: 豆瓣替代-NeoDB
     Thingiverse: ""
     Devto: ""
     Gitea: ""
