@@ -442,7 +442,7 @@ params:
     Douban:
       id: will101
       prefix: https://neodb.social/users
-      title: 豆瓣替代-NeoDB
+      title: NeoDB
     Angellist: ""
     Slidershare: ""
     Jsfiddle: ""
