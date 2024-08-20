@@ -7,7 +7,7 @@
 {{ $type = "complete" }}
 {{ end }}
 
-{{ $url := printf "https://neodb-api.hcplantern.top/%s?type=%s" $category $type }}
+{{ $url := printf "https://neodb-api.hcplantern.workers.dev/%s?type=%s" $category $type }}
 
 {{ $json := getJSON $url}}
 
