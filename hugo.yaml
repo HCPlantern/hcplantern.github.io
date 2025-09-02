@@ -120,10 +120,21 @@ markup:
       definitionList: true
       footnote: true
       linkify: true
-      strikethrough: true
       table: true
       taskList: true
       typographer: true
+      strikethrough: true
+      extras:
+        delete:
+          enable: true
+        insert:
+          enable: true
+        mark:
+          enable: true
+        subscript:
+          enable: false
+        superscript:
+          enable: false
     renderer:
       unsafe: true
   tableOfContents:
