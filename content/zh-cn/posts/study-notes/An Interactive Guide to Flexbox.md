@@ -11,20 +11,17 @@ categories:
 
 <!--more-->
 
-{{<admonition quote "Source Article">}}
-  - [An Interactive Guide to Flexbox](https://www.joshwcomeau.com/css/interactive-guide-to-flexbox)
+> [!quote] Source Article
+>  - [An Interactive Guide to Flexbox](https://www.joshwcomeau.com/css/interactive-guide-to-flexbox)
 
-{{</admonition >}}
 
 ![](https://r2.hcplantern.top/2023/09/10/20230910-205025.gif)
 
 ## Introduction
 
-{{<admonition abstract "Layout Algorithm">}}
-**Each layout algorithm is designed to solve a specific problem.** The default *Flow* layout is meant to create digital documents; it's essentially the *Microsoft Word* layout algorithm. Headings and paragraphs stack vertically as blocks, while things like text, links, and images sit inconspicuously within these blocks.
-
-While *Flexbox* is all about *flexibility*. We can control whether items grow or shrink, how the extra space is distributed, and more.
-{{</admonition >}}
+> [!abstract] Layout Algorithm
+> - **Each layout algorithm is designed to solve a specific problem.** The default *Flow* layout is meant to create digital documents; it's essentially the *Microsoft Word* layout algorithm. Headings and paragraphs stack vertically as blocks, while things like text, links, and images sit inconspicuously within these blocks.
+> - While *Flexbox* is all about *flexibility*. We can control whether items grow or shrink, how the extra space is distributed, and more.
 
 ## Flex direction
 

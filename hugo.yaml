@@ -63,67 +63,6 @@ languages:
           weight: 30
           params:
             icon: fa-solid fa-circle-info
-  en:
-    weight: 2
-    title: "hcplantern's blog"
-    languageCode: en
-    languageName: English
-    contentDir: content/en
-    menu:
-      main:
-        - identifier: movie
-          parent: ""
-          pre: ""
-          post: ""
-          name: Movie
-          url: /movie/
-          title: ""
-          weight: 20
-          params:
-            icon: fa-solid fa-film
-        - identifier: archives
-          parent: ""
-          pre: ""
-          post: ""
-          name: Archives
-          url: /archives/
-          title: ""
-          weight: 10
-          params:
-            class: ""
-            draft: false
-            icon: fa-solid fa-archive
-            type: ""
-        - identifier: categories
-          parent: "archives"
-          pre: ""
-          post: ""
-          name: Categories
-          url: /categories/
-          title: ""
-          weight: 11
-          params:
-            icon: fa-solid fa-folder-tree
-        - identifier: tags
-          parent: "archives"
-          pre: ""
-          post: ""
-          name: Tags
-          url: /tags/
-          title: ""
-          weight: 12
-          params:
-            icon: fa-solid fa-tags
-        - identifier: about
-          parent: ""
-          pre: ""
-          post: ""
-          name: About
-          url: /about/
-          title: ""
-          weight: 30
-          params:
-            icon: fa-solid fa-circle-info
 hasCJKLanguage: false
 pagination:
   pagerSize: 12
@@ -277,6 +216,28 @@ params:
   titleDelimiter: "-"
   indexWithSubtitle: false
   disableThemeInject: false
+  autoTranslate:
+    enable: true
+    service: '''client.edge'''
+    languages: '["english", "chinese_simplified", "chinese_traditional"]'
+    ignoreID: '[]'
+    ignoreClass: '[]'
+    ignoreTag: '[]'
+    detectLocalLanguage: false
+    cdn: ''
+    enterprise: false
+  # customPartials:
+  #   head: '[]'
+  #   menuDesktop: '[ "inject/translate-menu-desktop.html", ]'
+  #   menuMobile: '[ "inject/translate-menu-mobile.html", ]'
+  #   profile: '[]'
+  #   aside: '[]'
+  #   comment: '[]'
+  #   footer: '[]'
+  #   widgets: '[]'
+  #   assets: '[ "inject/cmpt-translate.html", ]'
+  #   postFooterBefore: '[]'
+  #   postFooterAfter: '[]'
   author:
     name: "hcplantern"
     email: "hcplantern@outlook.com"
