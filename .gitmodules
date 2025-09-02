@@ -1,4 +1,0 @@
-[submodule "themes/FixIt"]
-	path = themes/FixIt
-	url = git@github.com:HCPlantern/FixIt.git
-	branch = master

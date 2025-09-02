@@ -123,7 +123,16 @@ async function handleRequest(request) {
 
 {{ $url := printf "https://your-worker-url/%s?type=%s" $category $type }}
 
-{{ $json := getJSON $url}}
+{{ $json := dict }}
+{{ with try (resources.GetRemote $url) }}
+  {{ with .Err }}
+    {{ errorf "%s" . }}
+  {{ else with .Value }}
+    {{ $json = . | transform.Unmarshal }}
+  {{ else }}
+    {{ errorf "Unable to get remote resource %q" $url }}
+  {{ end }}
+{{ end }}
 
 <div class="item-gallery">
     {{ range $value := first 10 $json.data }}

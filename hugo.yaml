@@ -1,7 +1,5 @@
 title: "hcplantern's blog"
 baseURL: https://hcplantern.top
-theme:
-  - FixIt
 defaultContentLanguage: zh-cn
 languages:
   zh-cn:
@@ -127,7 +125,8 @@ languages:
           params:
             icon: fa-solid fa-circle-info
 hasCJKLanguage: false
-paginate: 12
+pagination:
+  pagerSize: 12
 copyright: ""
 enableRobotsTXT: true
 enableGitInfo: false
@@ -163,10 +162,14 @@ related:
       type: fragments
       weight: 80
 module:
+  imports:
+    - path: github.com/hugo-fixit/FixIt
+    - path: github.com/hugo-fixit/cmpt-translate
   hugoVersion:
     extended: true
     min: 0.112.0
 markup:
+  _merge: shallow
   highlight:
     codeFences: true
     lineNos: true
@@ -193,9 +196,9 @@ sitemap:
   filename: sitemap.xml
   priority: 0.5
 Permalinks:
-  posts: posts/:slugorfilename
+  posts: posts/:slugorcontentbasename
 privacy:
-  twitter:
+  x:
     enableDNT: true
   youtube:
     privacyEnhanced: true
@@ -236,6 +239,7 @@ outputFormats:
     isPlainText: true
     isHTML: false
 outputs:
+  _merge: shallow
   home:
     - HTML
     - RSS
@@ -254,6 +258,7 @@ outputs:
     - HTML
     - RSS
 taxonomies:
+  _merge: shallow
   category: categories
   tag: tags
   collection: collections
@@ -356,10 +361,12 @@ params:
       visitor: 0
       beian: 0
   archives:
-    paginate: 20
+    pagination:
+      pagerSize: 20
     dateFormat: 01-02
   section:
-    paginate: 20
+    pagination:
+      pagerSize: 20
     dateFormat: 01-02
     rss: 10
     recentlyUpdated:
@@ -368,7 +375,8 @@ params:
       days: 30
       maxCount: 10
   list:
-    paginate: 20
+    pagination:
+      pagerSize: 20
     dateFormat: 01-02
     rss: 10
   tagcloud:
@@ -391,7 +399,8 @@ params:
       disclaimer: ""
     posts:
       enable: true
-      paginate: 5
+      pagination:
+        pagerSize: 5
   social:
     GitHub: "hcplantern"
     Linkedin: ""
@@ -450,9 +459,7 @@ params:
     Vine: ""
     Googlescholar: ""
     Researchgate: ""
-    Mastodon:
-      id: "@dejavu4817"
-      prefix: https://m.cmx.im
+    Class: fa-brands fa-mastodon fa-fw
     Steam:
       id: 76561198339854999
       prefix: https://steamcommunity.com/profiles
@@ -745,7 +752,7 @@ params:
     rotate: 15
     fontSize: 0.85
     fontFamily: inherit
-  ibruce:
+  busuanzi:
     enable: true
     enablePost: false
   verification:
